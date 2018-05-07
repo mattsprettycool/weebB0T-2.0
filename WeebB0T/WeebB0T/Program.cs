@@ -88,9 +88,25 @@ namespace WeebB0T
             {
                 await message.Channel.SendMessageAsync("I'm honestly not sure at this point");
             }
+            else if (message.Content == "!goodbot")
+            {
+                int goodBot = Int32.Parse(System.IO.File.ReadAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\goodbot.txt"));
+                System.IO.File.WriteAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\goodbot.txt", ""+(goodBot+1));
+                string addS = "";
+                if (goodBot+1 != 1) addS = "s";
+                await message.Channel.SendMessageAsync(":hype: Aww, thanks! I *have* been a good bot, haven't I?\nI have been a good bot "+(goodBot+1)+" time"+addS+".");
+            }
+            else if (message.Content == "!badbot")
+            {
+                int badBot = Int32.Parse(System.IO.File.ReadAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\badbot.txt"));
+                System.IO.File.WriteAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\badbot.txt", "" + (badBot + 1));
+                string addS = "";
+                if (badBot + 1 != 1) addS = "s";
+                await message.Channel.SendMessageAsync(":dissapointed4: Oh...gomenasai. Honto gomenasai! I will strive to do better for your sake (no I won't)!\nI have been a bad bot " + (badBot + 1) + " time" + addS + ".");
+            }
             else if (message.Content == "!help")
             {
-                await message.Channel.SendMessageAsync("!do that thing that all programmers do when they first start learning how to code please - sends a hello world\n!anirec - gives you a random anime recommendation from My Anime List, may be hentai sooooo\n!is zero two great? - there are some stupid questions, you know\n!is matt pretty cool? - tells the truth\n!is the bot dead yet? - do I need to explain everything to you?");
+                await message.Channel.SendMessageAsync("!do that thing that all programmers do when they first start learning how to code please - sends a hello world\n!anirec - gives you a random anime recommendation from My Anime List, may be hentai sooooo\n!is zero two great? - there are some stupid questions, you know\n!is matt pretty cool? - tells the truth\n!is the bot dead yet? - do I need to explain everything to you?\n!goodbot - adds to the good bot counter\n!badbot - adds to the bad bot counter");
             }
         }
     }
