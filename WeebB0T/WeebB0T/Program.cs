@@ -104,6 +104,14 @@ namespace WeebB0T
                 if (badBot + 1 != 1) addS = "s";
                 await message.Channel.SendMessageAsync(":dissapointed4: Oh...gomenasai. Honto gomenasai! I will strive to do better for your sake (no I won't)!\nI have been a bad bot " + (badBot + 1) + " time" + addS + ".");
             }
+            else if (message.Content == "oof")
+            {
+                await message.Channel.SendMessageAsync("Kimoi... you just lost all my respect by using that word.");
+            }
+            else if (message.Content == "hi")
+            {
+                await message.Channel.SendMessageAsync("Hi!!!!!!!!!!!!!!!!!!!!");
+            }
             else if (message.Content == "!help")
             {
                 await message.Channel.SendMessageAsync("!do that thing that all programmers do when they first start learning how to code please - sends a hello world\n!anirec - gives you a random anime recommendation from My Anime List, may be hentai sooooo\n!is zero two great? - there are some stupid questions, you know\n!is matt pretty cool? - tells the truth\n!is the bot dead yet? - do I need to explain everything to you?\n!goodbot - adds to the good bot counter\n!badbot - adds to the bad bot counter");
