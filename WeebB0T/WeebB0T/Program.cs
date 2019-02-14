@@ -94,7 +94,7 @@ namespace WeebB0T
                 System.IO.File.WriteAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\goodbot.txt", "" + (goodBot + 1));
                 string addS = "";
                 if (goodBot + 1 != 1) addS = "s";
-                await message.Channel.SendMessageAsync(":hype: Aww, thanks! I *have* been a good bot, haven't I?\nI have been a good bot " + (goodBot + 1) + " time" + addS + ".");
+                await message.Channel.SendMessageAsync("<:hype:352334018261549056> Aww, thanks! I *have* been a good bot, haven't I?\nI have been a good bot " + (goodBot + 1) + " time" + addS + ".");
             }
             else if (message.Content == "!badbot")
             {
@@ -102,7 +102,7 @@ namespace WeebB0T
                 System.IO.File.WriteAllText(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\saved files\badbot.txt", "" + (badBot + 1));
                 string addS = "";
                 if (badBot + 1 != 1) addS = "s";
-                await message.Channel.SendMessageAsync(":dissapointed4: Oh...gomenasai. Honto gomenasai! I will strive to do better for your sake (no I won't)!\nI have been a bad bot " + (badBot + 1) + " time" + addS + ".");
+                await message.Channel.SendMessageAsync("<:dissapointed4:350825943813586944> Oh...gomenasai. Honto gomenasai! I will strive to do better for your sake (no I won't)!\nI have been a bad bot " + (badBot + 1) + " time" + addS + ".");
             }
             else if (message.Content == "oof")
             {
@@ -116,9 +116,13 @@ namespace WeebB0T
             {
                 await message.Channel.SendMessageAsync("!do that thing that all programmers do when they first start learning how to code please - sends a hello world\n!anirec - gives you a random anime recommendation from My Anime List, may be hentai sooooo\n!is zero two great? - there are some stupid questions, you know\n!is matt pretty cool? - tells the truth\n!is the bot dead yet? - do I need to explain everything to you?\n!goodbot - adds to the good bot counter\n!badbot - adds to the bad bot counter");
             }
-            else if (message.Content == "im bored")
+            else if (message.Content.ToLower().Replace("\'", "").Replace(" ", "") == "imbored")
             {
                 await message.Channel.SendMessageAsync("hi bored im sam");
+            }
+            else if(message.Content == "!badMatt")
+            {
+                await message.Channel.SendFileAsync(@"C:\Users\Matt\Documents\GitHub\Independent-Studies-Unity\CardGame\weebB0T-2.0\WeebB0T\WeebB0T\Images\gabGun.gif");
             }
         }
     }
